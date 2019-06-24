@@ -1,7 +1,7 @@
 <template>
   <div class="users-page">
     <div class="users-card">
-      <h2>{{this.$route.params.type}} of {{this.$route.params.login}}</h2>
+      <h2>{{this.$route.params.type}} - {{this.$route.params.login}}</h2>
       <router-link to="/"><button class="back-to-search-btn">Back to search</button></router-link>
       <div class="member-card" v-for="user in userlist" v-bind:key="user.id">
         <h2>{{user.login}}</h2>
@@ -22,7 +22,6 @@ export default {
     }
   },
   beforeMount: function () {
-    console.log(this.$route.params.login + this.$route.params.type);
     axios
       .get(`https://api.github.com/users/${this.$route.params.login}/${this.$route.params.type}`)
       .then(response => {
@@ -139,5 +138,47 @@ export default {
 
   .member-card button:hover {
     background-color: #2f59c4;
+  }
+
+  @media screen and (max-width: 767px){
+    .users-page {
+      padding: 0;
+    }
+
+    .users-card .description {
+      margin: 20px; 
+    }
+
+    .users-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+    }
+
+    .users-card h2 {
+      height: 100px;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    .users-card img {
+      position: relative;
+      top: -40px;
+      left: 0;
+    }
+
+    .users-card button {
+      position: static;
+      margin: 0 0 20px;
+    }
+
+    .member-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 95%;
+    }
   }
 </style>

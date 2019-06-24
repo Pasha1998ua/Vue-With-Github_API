@@ -156,4 +156,45 @@ export default {
   .member-card button:hover {
     background-color: #2f59c4;
   }
+
+   @media screen and (max-width: 767px){
+    .organization-page {
+      padding: 0;
+    }
+
+    .organization-card .description {
+      margin: 20px; 
+    }
+
+    .organization-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .organization-card h2 {
+      height: 100px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .organization-card img {
+      position: relative;
+      top: -40px;
+      left: 0;
+    }
+
+    .organization-card button {
+      position: static;
+      margin: 0 0 20px;
+    }
+
+    .member-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 95%;
+    }
+  }
 </style>

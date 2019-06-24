@@ -92,11 +92,13 @@ export default {
   .user-card .description {
     min-height: 80px;
     margin: 10px 20px 10px 180px;
+    word-break: break-all; 
     text-align: justify;
   }
 
   .user-card .info {
-      padding: 10px 40px;
+    padding: 10px 40px;
+    word-break: break-all; 
   }
 
   .user-card button {
@@ -113,5 +115,42 @@ export default {
 
   .user-card button:hover {
     background-color: #2f59c4;
+  }
+
+  @media screen and (max-width: 767px){
+    .user-page {
+      padding: 0;
+    }
+
+    .user-card .description, .user-card .info{
+      margin: 0;
+      padding: 10px;
+      min-height: 20px;
+    }
+
+    .user-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+    }
+
+    .user-card h2 {
+      height: 100px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .user-card img {
+      position: relative;
+      top: -40px;
+      left: 0;
+    }
+
+    .user-card button {
+      position: static;
+      margin: 0 0 20px;
+    }
   }
 </style>

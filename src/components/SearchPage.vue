@@ -70,11 +70,12 @@ export default {
 
   .search-form {
     position: relative;
+    width: 700px;
   }
 
   .search-form .search-input {
     outline: none;
-    width: 700px;
+    width: 100%;
     height: 60px;
     background-color: #5680e9;
     margin-bottom: 20px;
@@ -114,7 +115,7 @@ export default {
     position: relative;
     background-color: #c1c8e4;
     width: 700px;
-    height: 140px;
+    min-height: 140px;
     margin: 20px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   }
@@ -128,6 +129,7 @@ export default {
     color: #e5e8f7;
     text-transform: uppercase;
     padding: 20px 20px 20px 200px;
+    overflow: hidden;
     text-overflow: ellipsis;
   }
 
@@ -168,5 +170,55 @@ export default {
 
   .display-none {
     display: none;
+  }
+
+  @media screen and (max-width: 767px){
+    .search-page {
+      padding: 0;
+    }
+
+    .search-form {
+      width: 100%;
+    }
+
+    .organization-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .organization-card h2 {
+      height: 100px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .organization-card img {
+      position: relative;
+      top: -30px;
+      left: 0;
+    }
+
+    .organization-card button {
+      position: static;
+      margin: 0 0 20px;
+    }
+
+    .no-result-msg {
+      font-size: 2em;
+    }
+  }
+
+  @media screen and (max-width: 424px){
+    .search-form .search-input {
+      padding: 10px;
+    }
+
+    .search-form .search-btn {
+      position: static;
+      margin: 5px 5% 20px 5%;
+      width: 90%;
+    }
   }
 </style>
